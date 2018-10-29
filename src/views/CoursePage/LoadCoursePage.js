@@ -45,6 +45,7 @@ import Collapsible from 'react-collapsible';
 import { ListGroup, ListGroupItem } from 'reactstrap';
 import CourseListItem from './CourseListItem.js'
 import CourseSidebarPage from './CourseSidebar'
+var courses=require("./course.json");
 const dashboardRoutes = [];
 function Transition(props) {
   return <Slide direction="down" {...props} />;
@@ -54,27 +55,12 @@ class LoadCoursePage extends React.Component {
     constructor(props) {
         super(props);
         console.log(props.history.location)
-    // this.state={videos: [
-    //      'https://s3.amazonaws.com/codecademy-content/courses/React/react_video-fast.mp4',
-    //     'https://s3.amazonaws.com/codecademy-content/courses/React/react_video-slow.mp4',
-    //    'https://s3.amazonaws.com/codecademy-content/courses/React/react_video-cute.mp4',
-    //   'https://s3.amazonaws.com/codecademy-content/courses/React/react_video-eek.mp4'
-    // ]}
     this.state = {
-      modal: false
+      modal: false,
+      courses:courses.courses
     };
   }
-  handleClickOpen(modal) {
-    var x = [];
-    x[modal] = true;
-    this.setState(x);
-  }
-  handleClose(modal) {
-    var x = [];
-    x[modal] = false;
-    this.setState(x);
-  }
- 
+
   
   render() {
     const { classes, ...rest } = this.props;
@@ -137,19 +123,19 @@ class LoadCoursePage extends React.Component {
                                 How to use machine learning to learn models for data<br/>
                                 How to visualize complex data<br/>
                                 How to use Apache Spark to analyze data that does not fit within the memory of a single computer
-                                </p>
-                                <Collapsible trigger="Introduction &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; 1 lecture    &nbsp; &nbsp; &nbsp;      07:23   ">
-                                  <CourseListItem  demo={true }title={"Introduction to Data Science"} preview={"preview"} videoUrl="https://udemy-assets-on-demand.udemy.com/2018-10-06_07-20-44-08fd8f5b61fbc6d7522fa11065ca75f2/WebHD_720p.mp4?nva=20181026160547&token=090344cef7dd6cd5b0977" summary={"07:23"}/>
-                               </Collapsible>
-                               <Collapsible trigger="Calculating Mode &nbsp; &nbsp; 2 lectures    &nbsp; &nbsp; &nbsp;      19:03     ">
-                                  <CourseListItem  demo={true }title={"Calculating Mode"} preview={"preview"} videoUrl="https://udemy-assets-on-demand2.udemy.com/2018-10-06_07-21-19-8bbc02c3ac3cdf5ed3e6197fc9bd2b6f/WebHD_720p.mp4?nva=20181026183301&token=026b77229714ec45aebe7" summary={"08:25"}/>
-                                  <CourseListItem  demo={true }title={"Histogram Calculation"} preview={"preview"} videoUrl="https://udemy-assets-on-demand2.udemy.com/2018-10-06_07-22-57-49a66e38e35201357eab0b4aac0c8554/WebHD_720p.mp4?nva=20181026183403&token=0f06133c1b712d3d4eed7" summary={"11:25"}/>
-                               </Collapsible>  
-                               <Collapsible trigger="Basic Techniques &nbsp; &nbsp; &nbsp;3 lectures    &nbsp; &nbsp; &nbsp;      30:00     ">
-                                  <CourseListItem  demo={false} title={"Basic Reveration Techniques"} preview={"preview"} videoUrl="https://udemy-assets-on-demand.udemy.com/2018-10-06_07-20-44-08fd8f5b61fbc6d7522fa11065ca75f2/WebHD_720p.mp4?nva=20181026160547&token=090344cef7dd6cd5b0977" summary={"11:23"}/>
-                                  <CourseListItem  demo={false} title={"Using Numphy Techniques"} preview={"preview"} videoUrl="https://udemy-assets-on-demand.udemy.com/2018-10-06_07-20-44-08fd8f5b61fbc6d7522fa11065ca75f2/WebHD_720p.mp4?nva=20181026160547&token=090344cef7dd6cd5b0977" summary={"09:25"}/>
-                                  <CourseListItem  demo={false} title={"Summation of Elements"} preview={"preview"} videoUrl="https://udemy-assets-on-demand.udemy.com/2018-10-06_07-20-44-08fd8f5b61fbc6d7522fa11065ca75f2/WebHD_720p.mp4?nva=20181026160547&token=090344cef7dd6cd5b0977" summary={"10:25"}/>                                                                                         
-                               </Collapsible>                        
+                                </p>      
+                                  {
+                                    this.state.courses.map( (course) =>                                     
+                                      <Collapsible trigger={course.title +"  "+course.noLec+" "+course.summary}>
+                                          { course.data.map((item)=>
+                                              <CourseListItem  isDemo={item.isDemo}title={item.title} preview={item.preview} videoUrl={item.videoUrl} summary={item.summary}/>
+                                              )  
+                                         }
+                                      </Collapsible>
+                                    )
+                                  }
+                                
+                       
                             </div>
                               )
                             },

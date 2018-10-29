@@ -1,0 +1,69 @@
+{
+    "courses":[
+                {
+                    "title":"Introduction-DS  ",
+                    "noLec":"   1-lectures",
+                    "summary":"  07:23",
+                    "data":[
+                            {
+                                "title":"Introduction to Data Science",
+                                "preview":"preview",
+                                "summary":"07:23",
+                                "isDemo":true,
+                                "videoUrl":""
+                            }
+                    
+                            ]
+                },
+                {
+                    "title":"Calculating-Mod",
+                    "noLec":"2-lectures",
+                    "summary":"19:03",
+                    "data":[
+                            {
+                                "title":"Calculating Mode",
+                                "preview":"preview",
+                                "summary":"08:25",
+                                "isDemo":true,
+                                "videoUrl":""
+                            },
+                            {
+                                "title":"Histogram Calculation",
+                                "preview":"preview",
+                                "summary":"11:25",
+                                "isDemo":true,
+                                "videoUrl":""
+                            }
+  
+                            ]
+                },                
+                {
+                    "title":"Basic-Techniques",
+                    "noLec":"3-lectures ",
+                    "summary":"30:00",
+                    "data":[
+                            {
+                                "title":"Basic Reveration Techniques",
+                                "preview":"preview",
+                                "summary":"11:23",
+                                "isDemo":false,
+                                "videoUrl":""
+                            },
+                            {
+                                "title":"Using Numphy Techniques",
+                                "preview":"preview",
+                                "summary":"09:25",
+                                "isDemo":false,
+                                "videoUrl":""
+                            },
+                            {
+                                "title":"Summation of Elements",
+                                "preview":"preview",
+                                "summary":"10:25",
+                                "isDemo":false,
+                                "videoUrl":""
+                            }                                                
+                            ]
+                }
+            ]
+}

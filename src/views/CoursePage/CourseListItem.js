@@ -54,11 +54,13 @@ class CourseListItem extends React.Component {
     constructor(props) {
         super(props);
        this.state = {
-        modal: false,
-        login:dataManager.islogged(),
-        isdemo:this.props.demo
+          modal: false,
+          // islogin:dataManager.islogged(),
+          isdemo:this.props.demo
          };
-
+    this.handleClickOpen=this.handleClickOpen.bind(this);
+    this.handleClose=this.handleClose.bind(this);
+    this.handleClickCheck=this.handleClickCheck.bind(this);
          
   }
   handleClickOpen(modal) {
@@ -71,12 +73,17 @@ class CourseListItem extends React.Component {
     x[modal] = false;
     this.setState(x);
   }
+  handleClickCheck(){
+    if (this.state.islogin){
 
+    }
+    
+  }
   
   render() {
     const { classes, ...rest } = this.props;
     return (
-      <div> { this.props.demo ?
+      <div> { this.props.isDemo ?
             <div className="lecture-container  lecture-container--preview" data-purpose="lecture-item-1-1">
                     <div className="left-content">
                         <span className="udi udi-play-circle">
@@ -105,14 +112,14 @@ class CourseListItem extends React.Component {
                 </span>
                     <div className="top">
                         <div className="title">
-                                    <a onClick={() => this.handleClickOpen("signupclassicModal")} href="javascript:void(0)" data-template-url="/1950898/preview/?startPreviewId=14615496" data-course-id="1950898" data-lecture-id="12042972" course-impression-tracker="" data-additional-className="generic-modal--previews-video" data-tracking-type="lecture-preview">
+                                    <a onClick={() => this.handleClickCheck()} href="javascript:void(0)" data-template-url="/1950898/preview/?startPreviewId=14615496" data-course-id="1950898" data-lecture-id="12042972" course-impression-tracker="" data-additional-className="generic-modal--previews-video" data-tracking-type="lecture-preview">
                                         { this.props.title}
-                                </a>
+                                    </a>
                         </div>
                     </div>
             </div>
             <div className="details">
-                <a onClick={() => this.handleClickOpen("signupclassicModal")} href="javascript:void(0)" data-template-url="/1950898/preview/?startPreviewId=14615496" data-course-id="1950898" data-lecture-id="12042972" course-impression-tracker="" data-additional-className="generic-modal--previews-video" data-tracking-type="lecture-preview" data-purpose="preview-course">
+                <a onClick={() => this.handleClickCheck()} href="javascript:void(0)" data-template-url="/1950898/preview/?startPreviewId=14615496" data-course-id="1950898" data-lecture-id="12042972" course-impression-tracker="" data-additional-className="generic-modal--previews-video" data-tracking-type="lecture-preview" data-purpose="preview-course">
                                     <span className="preview-text">{this.props.preview}</span>
                 </a>    
                     <span className="content-summary">
