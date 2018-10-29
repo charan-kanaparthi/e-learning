@@ -50,44 +50,38 @@ function HeaderLinks({ ...props }) {
              Home
             </Link>  
       </ListItem>
- 
-      
-      
-     <ListItem className={classes.listItem}> 
+      <ListItem className={classes.listItem}> 
       <Link to="/courses" className={classes.navLink}>
           Courses
         </Link>
-     </ListItem>
-     <ListItem className={classes.listItem}> 
+      </ListItem>
+      <ListItem className={classes.listItem}> 
       <Link to="/Contact" className={classes.navLink}>
        Contact
         </Link>
-     </ListItem>
-     {islogin ?
+      </ListItem>
+      {islogin ?
           <ListItem className={classes.listItem}>   
           <Link to="" className={classes.navLink}>    {localStorage.getItem("token")}
            </Link>  
          </ListItem>:
           <ListItem className={classes.listItem}>
-         <Link to="/login" className={classes.navLink}>   Sign in
+         <Link to="/login" className={classes.navLink}>   Login
           </Link>      
         </ListItem>
-        
-     }
-      
+       }
       {  islogin ?
         <ListItem className={classes.listItem}>
          <Link onClick={ dataManager.logOut} to="/login" className={classes.navLink}>  
-           logout
+           Logout
           </Link>
         </ListItem>:
         <ListItem className={classes.listItem}>
         <Link to="" className={classes.navLink}>  
-        signup
+        Register
          </Link>
        </ListItem>
       }
-
   
       {/* <ListItem className={classes.listItem}>
         <Tooltip
@@ -106,7 +100,6 @@ function HeaderLinks({ ...props }) {
         </Tooltip>
       </ListItem> */}
     
-     
     </List>
   );
 }

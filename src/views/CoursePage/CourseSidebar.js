@@ -87,6 +87,7 @@ class CourseSidebarPage extends React.Component {
 										<div className="feature_title"><i className="fa fa-users" aria-hidden="true"></i><span>Lectures:</span></div>
 										<div className="feature_text ml-auto">35</div>
 									</div>
+									<Button  type="button" color="rose">Enroll</Button>
 								</div>
 							</div>
 						</div>

@@ -43,7 +43,7 @@ import CustomTabs from "components/CustomTabs/CustomTabs.jsx";
 import { Player } from 'video-react';
 import Collapsible from 'react-collapsible';
 import { ListGroup, ListGroupItem } from 'reactstrap';
-
+import dataManager from"../helpers/datamanager"
 const dashboardRoutes = [];
 function Transition(props) {
   return <Slide direction="down" {...props} />;
@@ -53,9 +53,13 @@ function Transition(props) {
 class CourseListItem extends React.Component {
     constructor(props) {
         super(props);
-    this.state = {
-      modal: false
-    };
+       this.state = {
+        modal: false,
+        login:dataManager.islogged(),
+        isdemo:this.props.demo
+         };
+
+         
   }
   handleClickOpen(modal) {
     var x = [];
