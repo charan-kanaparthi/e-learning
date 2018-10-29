@@ -7,7 +7,7 @@ import LoadCoursePage from "views/CoursePage/LoadCoursePage.js"
 var indexRoutes = [
   { path: "/landing-page", name: "LandingPage", component: LandingPage },
   { path: "/profile-page", name: "ProfilePage", component: ProfilePage },
-  { path: "/login-page", name: "LoginPage", component: LoginPage },
+  { path: "/login", name: "LoginPage", component: LoginPage },
   { path: "/Components", name: "Components", component: Components },
   {path:"/courses",name:"CoursePage",component:CoursePage},
   {path:"/course",name:"Single Course Page",component:LoadCoursePage},

@@ -1,7 +1,9 @@
 "use strict"
 
 import apiHelper from './apihelper';
-
+import { func } from 'prop-types';
+var _=require("lodash")
+var users=require("../LoginPage/login.json")
 function DataManager() {
 
   var cacheData = {};
@@ -16,6 +18,17 @@ function DataManager() {
             return false;
         return true;
     }
+  
+  this.checklogin=function(loginData,callback){
+     var res={status:false,data:null}
+    _.forEach(users.users, function(value) {
+      if(value.username==loginData.username  && value.password==loginData.password){
+        res.status=true
+        res.data=value    
+      }
+    });
+    callback(res)
+  }
 
     this.getData = function(url, params,  processor, callback,cache) {
 		params = this.addHeaderToParams(params);

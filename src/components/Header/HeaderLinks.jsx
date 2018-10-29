@@ -17,9 +17,12 @@ import CustomDropdown from "components/CustomDropdown/CustomDropdown.jsx";
 import Button from "components/CustomButtons/Button.jsx";
 
 import headerLinksStyle from "assets/jss/material-kit-react/components/headerLinksStyle.jsx";
-
+import dataManager from '../../views/helpers/datamanager'
 function HeaderLinks({ ...props }) {
   const { classes } = props;
+  var islogin=dataManager.isLoggedIn()
+
+// console.log(prop)
   return (
     <List className={classes.list}>
       {/* <ListItem className={classes.listItem}>
@@ -47,16 +50,9 @@ function HeaderLinks({ ...props }) {
              Home
             </Link>  
       </ListItem>
-      <ListItem className={classes.listItem}>
-            <Link to="/login-page" className={classes.navLink}>
-             Sign in
-            </Link>  
-      </ListItem>
-      <ListItem className={classes.listItem}>
-      <Link to="/login-page" className={classes.navLink}>
-          Sign up
-        </Link>
-     </ListItem>
+ 
+      
+      
      <ListItem className={classes.listItem}> 
       <Link to="/courses" className={classes.navLink}>
           Courses
@@ -67,6 +63,31 @@ function HeaderLinks({ ...props }) {
        Contact
         </Link>
      </ListItem>
+     {islogin ?
+          <ListItem className={classes.listItem}>   
+          <Link to="" className={classes.navLink}>    {localStorage.getItem("token")}
+           </Link>  
+         </ListItem>:
+          <ListItem className={classes.listItem}>
+         <Link to="/login" className={classes.navLink}>   Sign in
+          </Link>      
+        </ListItem>
+        
+     }
+      
+      {  islogin ?
+        <ListItem className={classes.listItem}>
+         <Link onClick={ dataManager.logOut} to="/login" className={classes.navLink}>  
+           logout
+          </Link>
+        </ListItem>:
+        <ListItem className={classes.listItem}>
+        <Link to="" className={classes.navLink}>  
+        signup
+         </Link>
+       </ListItem>
+      }
+
   
       {/* <ListItem className={classes.listItem}>
         <Tooltip

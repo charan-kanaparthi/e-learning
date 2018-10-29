@@ -4,7 +4,7 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import Icon from "@material-ui/core/Icon";
 // @material-ui/icons
-// import username from "@material-ui/icons/username";
+import Email from "@material-ui/icons/Email";
 import People from "@material-ui/icons/People";
 // core components
 import Header from "components/Header/Header.jsx";
@@ -22,51 +22,44 @@ import loginPageStyle from "assets/jss/material-kit-react/views/loginPage.jsx";
 import image from "assets/img/bg7.jpg";
 import history from '../../index';
 import dataManager from '../helpers/datamanager';
-import { Col, Form, FormGroup, Label, Input , FormText } from 'reactstrap';
+import { Col, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
-class LoginPage extends React.Component {
+class SignupPage extends React.Component {
   constructor(props) {
     super(props);
     // we use this to make the card to appear after the page has been rendered
     this.state = {
-      cardAnimaton: "cardHidden",username:"",password:"",validation:{username:false,password:false},submitted:false
+      cardAnimaton: "cardHidden",firstName:'',lastName:"",email:"",mobile:"",pincode:"",validation:{ firstName:null,lastName:null,email:null,mobile:null,pincode:null}
     };
-    localStorage.clear();
     this.handleChange=this.handleChange.bind(this);
-    this.handleSubmit=this.handleSubmit.bind(this);
   }
   handleSubmit(){
-    if(this.state.username ==''|| this.state.password =='' ){
-      this.setState( (prevState)=> {
-        prevState.submitted=true
-    })
-      return;
-    }
-    dataManager.checklogin({username:this.state.username,password:this.state.password},(res)=>{
-      console.log(res)
-      if(res.status){
-        dataManager.setToken(res.data.token);
-        dataManager.setUserInfo(res);
-        history.push('/landing-page');
-      }else{
-        alert("failed")
-      } 
-      
-    })
-
+    history.push('/landing-page');
   }
   handleChange(event) {
     console.log(event.target.name)
     var type=event.target.name
     var value=event.target.value    
-    if(type==='username'){
-        this.setState({username: value});
-        console.log(this.state.username)
+    if(type==='firstName'){
+        this.setState({firstName: value});
+        console.log(this.state.firstName)
       }
-      if(type==='password'){
-      this.setState({password: value});
-      console.log(this.state.password)
-    }     
+      if(type==='lastName'){
+      this.setState({lastName: value});
+        		
+    }
+      if(type==='email'){
+        this.setState({email: value}); 
+        
+      }
+      if(type==='mobile'){ 
+          var phoneno = /^\d{10}$/;
+        this.setState({mobile: value}); 	
+         		
+      }
+      if(type==='pincode'){
+        this.setState({pincode: value});
+               }
     
     }
   componentDidMount() {
@@ -136,26 +129,53 @@ class LoginPage extends React.Component {
                     </CardHeader>
                     <p className={classes.divider}>Or Be Classical</p>
                     <CardBody>
-                          <Form className="center" >
-                
-                            <FormGroup row>
-                              <Label style={{color:"#9830b0"}}   for="username"  md={4}>Username</Label>
-                              <Col md={8}>
-                                <Input  type="username"   name="username" value={this.state.username} onChange={this.handleChange} placeholder="Enter username" />
-                              
-                                <br/> { this.state.submitted && <p style={{color:"red"}}>{  this.state.username.length==0||this.state.username.length===""  ? "username cant be blank":"" } </p>}
-                      
-                              </Col>
-                            </FormGroup>
+                    <Form className="center" >
+		        <FormGroup row>
+		          <Label for="firstName" md={4}>First Name</Label>
+		          <Col  md={8}>
+		            <Input  type="text" ref='firstName'  name="firstName" value={this.state.firstName} onChange={this.handleChange} placeholder="Enter First Name" />
+		          
+		           <br/> { this.state.validation.firstName  && <p className={"danger"}> First Name cant be blank </p>}
+	     
+		          </Col>
+		        </FormGroup>
+		        <FormGroup row>
+		          <Label for="firstName"  md={4}>Last Name</Label>
+		          <Col md={8}>
+		            <Input  type="text"  name="lastName" value={this.state.lastName} onChange={this.handleChange} placeholder="Enter Last Name" />
+		          
+		               <br/> { this.state.validation.lastName  && <p className={"danger"}> Last Name cant be blank </p>}
+	     
+		          </Col>
+		        </FormGroup>
 
-                            <FormGroup row>
-                              <Label style={{color:"#9830b0"}}  for="firstName"  md={4}> Password </Label>
-                              <Col md={8}>
-                                <Input  type="password"  name="password" value={this.state.mobile} onChange={this.handleChange} placeholder="Enter Password" />          
-                                <br/> { this.state.submitted  && <p style={{color:"red"}}> { this.state.password.length===0 ||this.state.password.length==='' ? "Password cant be blank" :""} </p>  }
-                              </Col>
-                            </FormGroup>        
-                          </Form>	
+		        <FormGroup row>
+		          <Label for="firstName"  md={4}>Email</Label>
+		          <Col md={8}>
+		            <Input  type="email"   name="email" value={this.state.email} onChange={this.handleChange} placeholder="Enter Email" />
+		          
+		            <br/> { this.state.validation.email  && <p className={"danger"}>{ this.state.email.length===0  ? "Email cant be blank" :"Email is Invalid"} </p>}
+	     
+		          </Col>
+		        </FormGroup>
+
+		        <FormGroup row>
+		          <Label for="firstName"  md={4}> Mobile No </Label>
+		          <Col md={8}>
+		            <Input  type="text"  name="mobile" value={this.state.mobile} onChange={this.handleChange} placeholder="Enter Mobile No" />          
+		            <br/> { this.state.validation.mobile  && <p className={"danger"}> { this.state.mobile.length===0  ? "Mobile No cant be blank" :"Mobile No is Invalid"} </p>  }
+		          </Col>
+		        </FormGroup>
+
+
+		        <FormGroup row>
+		          <Label for="firstName"  md={4}> Pin Code  </Label>
+		          <Col md={8}>
+		            <Input  type="text"   name="pincode" value={this.state.pincode} onChange={this.handleChange}  placeholder="Enter Pin Code" />          
+		                <br/> { this.state.validation.pincode  && <p className={"danger"}> { this.state.pincode.length===0  ? "Pincode cant be blank" :"Pincode is Invalid"}  </p>}
+	      			 </Col>
+		        </FormGroup>
+	       </Form>	
                     </CardBody>
                     <CardFooter className={classes.cardFooter}>
                       <Button simple color="primary" size="lg" onClick={this.handleSubmit} >
@@ -174,4 +194,4 @@ class LoginPage extends React.Component {
   }
 }
 
-export default withStyles(loginPageStyle)(LoginPage);
+export default withStyles(loginPageStyle)(SignupPage);
