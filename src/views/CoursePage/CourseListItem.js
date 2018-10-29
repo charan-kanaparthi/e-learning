@@ -76,7 +76,7 @@ class CourseListItem extends React.Component {
             <div className="lecture-container  lecture-container--preview" data-purpose="lecture-item-1-1">
                     <div className="left-content">
                         <span className="udi udi-play-circle">
-                        <i className="material-icons">play_circle_filled</i>
+                        <i class="material-icons">play_circle_filled</i>
                         </span>
                             <div className="top">
                                 <div className="title">
@@ -97,7 +97,7 @@ class CourseListItem extends React.Component {
             </div>: <div className="lecture-container  lecture-container--preview" data-purpose="lecture-item-1-1">
             <div className="left-content">
                 <span className="udi udi-play-circle">
-                <i className="material-icons">https </i>
+                <i class="material-icons">https </i>
                 </span>
                     <div className="top">
                         <div className="title">
