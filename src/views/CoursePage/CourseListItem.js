@@ -55,8 +55,10 @@ class CourseListItem extends React.Component {
         super(props);
        this.state = {
           modal: false,
-          // islogin:dataManager.islogged(),
-          isdemo:this.props.demo
+          islogin:dataManager.isLoggedIn(),
+          isDemo:this.props.isDemo,
+          isPaid:false,
+          courseTitle:this.props.courseTitle
          };
     this.handleClickOpen=this.handleClickOpen.bind(this);
     this.handleClose=this.handleClose.bind(this);
@@ -75,19 +77,29 @@ class CourseListItem extends React.Component {
   }
   handleClickCheck(){
     if (this.state.islogin){
-
+      console.log("logged in")
     }
-    
+    else{
+      console.log("notlogged in")
+    }
   }
-  
+  componentWillMount(){
+    if(this.state.islogin){
+     var uInfo= dataManager.getUserInfo()      
+     if(this.state.courseTitle==uInfo.data.courses){
+       console.log("paid")
+     }
+    }
+ 
+  }
   render() {
     const { classes, ...rest } = this.props;
     return (
-      <div> { this.props.isDemo ?
+      <div> { this.state.isDemo ?
             <div className="lecture-container  lecture-container--preview" data-purpose="lecture-item-1-1">
                     <div className="left-content">
                         <span className="udi udi-play-circle">
-                        <i class="material-icons">play_circle_filled</i>
+                        <i className="material-icons">play_circle_filled</i>
                         </span>
                             <div className="top">
                                 <div className="title">
@@ -105,10 +117,11 @@ class CourseListItem extends React.Component {
                                 {this.props.summary}
                             </span>
                     </div>
-            </div>: <div className="lecture-container  lecture-container--preview" data-purpose="lecture-item-1-1">
+            </div>:
+             <div className="lecture-container  lecture-container--preview" data-purpose="lecture-item-1-1">
             <div className="left-content">
                 <span className="udi udi-play-circle">
-                <i class="material-icons">https </i>
+               { } <i className="material-icons">https </i>
                 </span>
                     <div className="top">
                         <div className="title">

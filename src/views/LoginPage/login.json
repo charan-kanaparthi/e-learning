@@ -4,12 +4,12 @@
         "username":"user1",
         "password":"user1",
         "token":"user1",
-        "courses":"true"
+        "courses":"Data Scientist"
     },
     {
-        "username":"user1",
-        "password":"user1",
-        "token":"user1",
+        "username":"user2",
+        "password":"user2",
+        "token":"user2",
         "courses":""
         
 

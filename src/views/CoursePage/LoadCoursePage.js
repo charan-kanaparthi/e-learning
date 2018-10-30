@@ -89,7 +89,7 @@ class LoadCoursePage extends React.Component {
 				<Col sm="12" md="8">
 					
 					<div className="course_container" >
-						<div className="course_title">Data Scientist</div>
+						<div className="course_title">{this.state.courses.courseTitle}</div>
                   <div className="course_image"> <video  src="https://adhyagroup.tech/wp-content/uploads/2018/09/Data-Scientist.mp4#t=" autoplay="" loop="" controlslist="nodownload"></video>
               {
                 //    <img src={require("assets/images/course_4.jpg")} alt=""/>
@@ -125,10 +125,10 @@ class LoadCoursePage extends React.Component {
                                 How to use Apache Spark to analyze data that does not fit within the memory of a single computer
                                 </p>      
                                   {
-                                    this.state.courses.map( (course) =>                                     
+                                    this.state.courses.courseData.map( (course) =>                                     
                                       <Collapsible trigger={course.title +"  "+course.noLec+" "+course.summary}>
                                           { course.data.map((item)=>
-                                              <CourseListItem  isDemo={item.isDemo}title={item.title} preview={item.preview} videoUrl={item.videoUrl} summary={item.summary}/>
+                                              <CourseListItem  courseTitle={this.state.courses.courseTitle} isDemo={item.isDemo} title={item.title} preview={item.preview} videoUrl={item.videoUrl} summary={item.summary}/>
                                               )  
                                          }
                                       </Collapsible>
