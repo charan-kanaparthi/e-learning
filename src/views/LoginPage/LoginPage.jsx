@@ -49,7 +49,7 @@ class LoginPage extends React.Component {
       if(res.status){
         dataManager.setToken(res.data.token);
         dataManager.setUserInfo(res);
-        history.push('/landing-page');
+        history.push('/courses');
       }else{
         alert("failed")
       } 

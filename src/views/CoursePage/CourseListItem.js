@@ -64,7 +64,7 @@ class CourseListItem extends React.Component {
     this.handleClickOpen=this.handleClickOpen.bind(this);
     this.handleClose=this.handleClose.bind(this);
     this.handleClickCheck=this.handleClickCheck.bind(this);
-         
+         console.log(this.props.videoUrl)
   }
   handleClickOpen(modal) {
     var x = [];

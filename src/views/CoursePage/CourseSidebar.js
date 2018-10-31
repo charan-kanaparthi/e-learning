@@ -69,25 +69,21 @@ class CourseSidebarPage extends React.Component {
 								<div className="feature_list">	
 									<div className="feature d-flex flex-row align-items-center justify-content-start">
 										<div className="feature_title"><i className="fa fa-clock-o" aria-hidden="true"></i><span>Duration:</span></div>
-										<div className="feature_text ml-auto">2 weeks</div>
+										<div className="feature_text ml-auto">41 hours </div>
 									</div>	
-									<div className="feature d-flex flex-row align-items-center justify-content-start">
-										<div className="feature_title"><i className="fa fa-file-text-o" aria-hidden="true"></i><span>Lectures:</span></div>
-										<div className="feature_text ml-auto">10</div>
-									</div>	
-									<div className="feature d-flex flex-row align-items-center justify-content-start">
-										<div className="feature_title"><i className="fa fa-question-circle-o" aria-hidden="true"></i><span>Lectures:</span></div>
-										<div className="feature_text ml-auto">6</div>
-									</div>
+								
+									
 									<div className="feature d-flex flex-row align-items-center justify-content-start">
 										<div className="feature_title"><i className="fa fa-list-alt" aria-hidden="true"></i><span>Lectures:</span></div>
 										<div className="feature_text ml-auto">Yes</div>
 									</div>								
 									<div className="feature d-flex flex-row align-items-center justify-content-start">
-										<div className="feature_title"><i className="fa fa-users" aria-hidden="true"></i><span>Lectures:</span></div>
+										<div className="feature_title"><i className="fa fa-users" aria-hidden="true"></i><span>Articles:</span></div>
 										<div className="feature_text ml-auto">35</div>
 									</div>
-									<Button  type="button" color="rose">Enroll</Button>
+									{this.props.isPaid ?  "":  <Button onClick={this.handleSubmit} type="button" color="rose">Enroll</Button> } 
+               
+									
 								</div>
 							</div>
 						</div>
@@ -100,7 +96,7 @@ class CourseSidebarPage extends React.Component {
 									<div className="teacher_image"><img src={require("assets/images/teacher.jpg")} alt=""/></div>
 									<div className="teacher_title">
 										<div className="teacher_name"><a href="#">Jacke Masito</a></div>
-										<div className="teacher_position">Marketing & Management</div>
+										<div className="teacher_position">Sr Data Scientist</div>
 									</div>
 								</div>
 								<div className="teacher_meta_container">
@@ -121,7 +117,7 @@ class CourseSidebarPage extends React.Component {
 									</div>
 								</div>
 								<div className="teacher_info">
-									<p>Hi! I am Masion, I’m a marketing & management  eros pulvinar velit laoreet, sit amet egestas erat dignissim. Sed quis rutrum tellus, sit amet viverra felis. Cras sagittis sem sit amet urna feugiat rutrum nam nulla ipsum.</p>
+									<p>I'm a Data Scientist at one of Scotland's leading software companies: Skyscanner. I've been teaching software online for over 5 years, and I founded Teclado to bring software development to everyone—my objective is for you to truly understand everything that goes on behind the scenes!</p>
 								</div>
 							</div>
 						</div>
@@ -135,7 +131,7 @@ class CourseSidebarPage extends React.Component {
 								<div className="latest d-flex flex-row align-items-start justify-content-start">
 									<div className="latest_image"><div><img src={require("assets/images/latest_1.jpg")} alt=""/></div></div>
 									<div className="latest_content">
-										<div className="latest_title"><a href="course.html">How to Design a Logo a Beginners Course</a></div>
+										<div className="latest_title"><a href="course.html">Deep Learning</a></div>
 										<div className="latest_price">Free</div>
 									</div>
 								</div>
@@ -144,7 +140,7 @@ class CourseSidebarPage extends React.Component {
 								<div className="latest d-flex flex-row align-items-start justify-content-start">
 									<div className="latest_image"><div><img src={require("assets/images/latest_2.jpg")} alt=""/></div></div>
 									<div className="latest_content">
-										<div className="latest_title"><a href="course.html">Photography for Beginners Masterclass</a></div>
+										<div className="latest_title"><a href="course.html">Python</a></div>
 										<div className="latest_price">$170</div>
 									</div>
 								</div>
@@ -153,7 +149,7 @@ class CourseSidebarPage extends React.Component {
 								<div className="latest d-flex flex-row align-items-start justify-content-start">
 									<div className="latest_image"><div><img src={require("assets/images/latest_3.jpg")} alt=""/></div></div>
 									<div className="latest_content">
-										<div className="latest_title"><a href="course.html">The Secrets of Body Language</a></div>
+										<div className="latest_title"><a href="course.html">Artificial Intelligence</a></div>
 										<div className="latest_price">$220</div>
 									</div>
 								</div>

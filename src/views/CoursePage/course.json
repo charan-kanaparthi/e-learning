@@ -11,7 +11,7 @@
 							"preview": "preview",
 							"summary": "07:23",
 							"isDemo": true,
-							"videoUrl": ""
+							"videoUrl": "https://www.youtube.com/watch?v=S-T2-ir6TPA&list=PL9ooVrP1hQOGR57Y4g1LFhn1JXVgn1lkX&index=1"
 						}
 
 					]
@@ -25,14 +25,14 @@
 							"preview": "preview",
 							"summary": "08:25",
 							"isDemo": true,
-							"videoUrl": ""
+							"videoUrl": "https://www.youtube.com/watch?v=8eoi2BKaSRE&index=2&list=PL9ooVrP1hQOGR57Y4g1LFhn1JXVgn1lkX"
 						},
 						{
 							"title": "Histogram Calculation",
 							"preview": "preview",
 							"summary": "11:25",
 							"isDemo": true,
-							"videoUrl": ""
+							"videoUrl": "https://www.youtube.com/watch?v=qOraDpY3Ta0&list=PL9ooVrP1hQOGR57Y4g1LFhn1JXVgn1lkX&index=3"
 						}
 
 					]
@@ -46,21 +46,21 @@
 							"preview": "preview",
 							"summary": "11:23",
 							"isDemo": false,
-							"videoUrl": ""
+							"videoUrl": "https://www.youtube.com/watch?v=js6C2mLXEDw&list=PL9ooVrP1hQOGR57Y4g1LFhn1JXVgn1lkX&index=5"
 						},
 						{
 							"title": "Using Numphy Techniques",
 							"preview": "preview",
 							"summary": "09:25",
 							"isDemo": false,
-							"videoUrl": ""
+							"videoUrl": "https://www.youtube.com/watch?v=-EP37nr8RkQ&index=6&list=PL9ooVrP1hQOGR57Y4g1LFhn1JXVgn1lkX"
 						},
 						{
 							"title": "Summation of Elements",
 							"preview": "preview",
 							"summary": "10:25",
 							"isDemo": false,
-							"videoUrl": ""
+							"videoUrl": "https://www.youtube.com/watch?v=Up6KLx3m2ww&index=10&list=PL9ooVrP1hQOGR57Y4g1LFhn1JXVgn1lkX"
 						}
 					]
 				}

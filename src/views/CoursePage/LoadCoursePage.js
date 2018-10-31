@@ -35,6 +35,7 @@ import Close from "@material-ui/icons/Close";
 import LibraryBooks from "@material-ui/icons/LibraryBooks";
 import modalStyle from "assets/jss/material-kit-react/modalStyle.jsx";
 import javascriptStyles from "assets/jss/material-kit-react/views/componentsSections/javascriptStyles.jsx";
+import dataManager from"../helpers/datamanager"
 
 // core components
 import CustomTabs from "components/CustomTabs/CustomTabs.jsx";
@@ -47,6 +48,7 @@ import CourseListItem from './CourseListItem.js'
 import CourseSidebarPage from './CourseSidebar'
 var courses=require("./course.json");
 const dashboardRoutes = [];
+
 function Transition(props) {
   return <Slide direction="down" {...props} />;
 }
@@ -57,11 +59,25 @@ class LoadCoursePage extends React.Component {
         console.log(props.history.location)
     this.state = {
       modal: false,
-      courses:courses.courses
+      courses:courses.courses,
+      islogin:dataManager.isLoggedIn(),
+      isPaid:false,
+      courseTitle:"Data Scientist"
     };
+ 
   }
 
-  
+  componentWillMount(){
+
+    if(this.state.islogin){
+     var uInfo= dataManager.getUserInfo()      
+     if(this.state.courseTitle==uInfo.data.courses){
+       console.log("paid")
+       this.setState({isPaid: true});
+     }
+    }
+ 
+  }
   render() {
     const { classes, ...rest } = this.props;
     return (
@@ -144,14 +160,8 @@ class LoadCoursePage extends React.Component {
                               tabIcon: Build,
                               tabContent: (
                                 <p className={classes.textCenter}>
-                                  think that’s a responsibility that I have, to push
-                                  possibilities, to show people, this is the level that
-                                  things could be at. So when you get something that has
-                                  the name Kanye West on it, it’s supposed to be pushing
-                                  the furthest possibilities. I will be the leader of a
-                                  company that ends up being worth billions of dollars,
-                                  because I got the answers. I understand culture. I am
-                                  the nucleus.
+                                It help me to understand from scratch to advance level in machine learning and
+                                 I congratulate both of you to make so much effort to develop this course.
                                 </p>
                               )
                             }
@@ -162,7 +172,7 @@ class LoadCoursePage extends React.Component {
           </div>
           </Col>    
           <Col sm="12" md="4">
-             <CourseSidebarPage/>
+             <CourseSidebarPage isPaid={this.state.isPaid}/>
           </Col>
       </Row>
 

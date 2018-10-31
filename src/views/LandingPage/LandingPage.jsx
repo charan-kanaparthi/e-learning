@@ -21,7 +21,8 @@ import landingPageStyle from "assets/jss/material-kit-react/views/landingPage.js
 import ProductSection from "./Sections/ProductSection.jsx";
 import TeamSection from "./Sections/TeamSection.jsx";
 import WorkSection from "./Sections/WorkSection.jsx";
-
+import { Player } from 'video-react';
+import "../../../node_modules/video-react/dist/video-react.css";
 const dashboardRoutes = [];
 
 class LandingPage extends React.Component {
@@ -42,9 +43,11 @@ class LandingPage extends React.Component {
           {...rest}
         />
         <Parallax filter image={require("assets/img/landing-bg.jpg")}>
+               
           <div className={classes.container}>
-            <GridContainer>
+          <GridContainer>
               <GridItem xs={12} sm={12} md={6}>
+           
                 <h1 className={classes.title}>Your Story Starts With Us.</h1>
                 <h4>
                   Every landing page needs a small description after the big
@@ -64,6 +67,12 @@ class LandingPage extends React.Component {
                 </Button>
               </GridItem>
             </GridContainer>
+          <Player
+                         playsInline
+                         poster="/assets/poster.png"
+                         src="https://adhyagroup.tech//wp-content//uploads//2018//09//My-Video1-1.mp4"
+                       />
+            
           </div>
         </Parallax>
         <div className={classNames(classes.main, classes.mainRaised)}>

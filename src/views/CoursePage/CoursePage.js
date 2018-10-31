@@ -24,25 +24,35 @@ import Parallax from "components/Parallax/Parallax.jsx";
 //  import Button from "components/CustomButtons/Button.jsx";
 // import "node_modules/video-react/dist/video-react.css";
 import { Player } from 'video-react';
+import dataManager from"../helpers/datamanager"
 
 const dashboardRoutes = [];
 
 class CoursePage extends React.Component {
     constructor(props) {
         super(props);
-    this.state={videos: [
-         'https://s3.amazonaws.com/codecademy-content/courses/React/react_video-fast.mp4',
-        'https://s3.amazonaws.com/codecademy-content/courses/React/react_video-slow.mp4',
-       'https://s3.amazonaws.com/codecademy-content/courses/React/react_video-cute.mp4',
-      'https://s3.amazonaws.com/codecademy-content/courses/React/react_video-eek.mp4'
-    ]}
+        this.state = {
+          islogin:dataManager.isLoggedIn(),
+          isPaid:false,
+          courseTitle:"Data Scientist"
+         };
     this.handleSubmit=this.handleSubmit.bind(this)
     }
     
     handleSubmit(){
       history.push('/course',this.state);
     }
+    componentWillMount(){
 
+      if(this.state.islogin){
+       var uInfo= dataManager.getUserInfo()      
+       if(this.state.courseTitle==uInfo.data.courses){
+         console.log("paid")
+         this.setState({isPaid: true});
+       }
+      }
+   
+    }
   render() {
     const { classes, ...rest } = this.props;
     return (
@@ -101,7 +111,9 @@ class CoursePage extends React.Component {
           <p>A Data Scientist Combines statistical and machine learning techniques with R and Python programming to analyze and interpret complex data
           </p>
           <p><small className={classes.textMuted}>Last updated 3 mins ago</small></p>
-          <Button onClick={this.handleSubmit} type="button" color="rose">Enroll</Button>
+          {this.state.isPaid ?  <Button onClick={this.handleSubmit} type="button" color="rose">Go to Course</Button>:  <Button onClick={this.handleSubmit} type="button" color="rose">Enroll</Button> } 
+               
+         
         </CardBody>
       </Card>
         </GridItem>
