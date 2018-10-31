@@ -44,6 +44,7 @@ import { Player } from 'video-react';
 import Collapsible from 'react-collapsible';
 import { ListGroup, ListGroupItem } from 'reactstrap';
 import dataManager from"../helpers/datamanager"
+import history from '../../index';
 const dashboardRoutes = [];
 function Transition(props) {
   return <Slide direction="down" {...props} />;
@@ -76,18 +77,28 @@ class CourseListItem extends React.Component {
     this.setState(x);
   }
   handleClickCheck(){
+    console.log(" in")
     if (this.state.islogin){
       console.log("logged in")
+  
+      if(this.state.isPaid){
+       this.handleClickOpen("classicModal");
+      }else{
+        alert("please Enroll")
+      }
     }
-    else{
-      console.log("notlogged in")
-    }
+      else{
+        history.push('/login');
+      }
+    
   }
   componentWillMount(){
+
     if(this.state.islogin){
      var uInfo= dataManager.getUserInfo()      
      if(this.state.courseTitle==uInfo.data.courses){
        console.log("paid")
+       this.setState({isPaid: true});
      }
     }
  
@@ -121,18 +132,18 @@ class CourseListItem extends React.Component {
              <div className="lecture-container  lecture-container--preview" data-purpose="lecture-item-1-1">
             <div className="left-content">
                 <span className="udi udi-play-circle">
-               { } <i className="material-icons">https </i>
+                {this.state.isPaid ? <i className="material-icons"> play_circle_filled   </i> : <i className="material-icons">  https</i> } 
                 </span>
                     <div className="top">
                         <div className="title">
-                                    <a onClick={() => this.handleClickCheck()} href="javascript:void(0)" data-template-url="/1950898/preview/?startPreviewId=14615496" data-course-id="1950898" data-lecture-id="12042972" course-impression-tracker="" data-additional-className="generic-modal--previews-video" data-tracking-type="lecture-preview">
+                                    <a onClick={this.handleClickCheck} href="javascript:void(0)" data-template-url="/1950898/preview/?startPreviewId=14615496" data-course-id="1950898" data-lecture-id="12042972" course-impression-tracker="" data-additional-className="generic-modal--previews-video" data-tracking-type="lecture-preview">
                                         { this.props.title}
                                     </a>
                         </div>
                     </div>
             </div>
             <div className="details">
-                <a onClick={() => this.handleClickCheck()} href="javascript:void(0)" data-template-url="/1950898/preview/?startPreviewId=14615496" data-course-id="1950898" data-lecture-id="12042972" course-impression-tracker="" data-additional-className="generic-modal--previews-video" data-tracking-type="lecture-preview" data-purpose="preview-course">
+                <a onClick={ this.handleClickCheck} href="javascript:void(0)" data-template-url="/1950898/preview/?startPreviewId=14615496" data-course-id="1950898" data-lecture-id="12042972" course-impression-tracker="" data-additional-className="generic-modal--previews-video" data-tracking-type="lecture-preview" data-purpose="preview-course">
                                     <span className="preview-text">{this.props.preview}</span>
                 </a>    
                     <span className="content-summary">
