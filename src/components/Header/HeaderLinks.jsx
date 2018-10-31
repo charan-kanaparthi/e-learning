@@ -62,7 +62,7 @@ function HeaderLinks({ ...props }) {
       </ListItem>
       {islogin ?
           <ListItem className={classes.listItem}>   
-          <Link to="" className={classes.navLink}>    {localStorage.getItem("token")}
+          <Link to="" className={classes.navLink}>    {sessionStorage.getItem("token").split("\"")[1]}
            </Link>  
          </ListItem>:
           <ListItem className={classes.listItem}>

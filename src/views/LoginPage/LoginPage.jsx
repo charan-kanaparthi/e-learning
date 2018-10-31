@@ -32,6 +32,8 @@ class LoginPage extends React.Component {
       cardAnimaton: "cardHidden",username:"",password:"",validation:{username:false,password:false},submitted:false
     };
     localStorage.clear();
+    sessionStorage.clear()
+    
     this.handleChange=this.handleChange.bind(this);
     this.handleSubmit=this.handleSubmit.bind(this);
   }

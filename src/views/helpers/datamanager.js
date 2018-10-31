@@ -65,15 +65,15 @@ function DataManager() {
 
 
 //   this.getHeaderState = function() {
-//     return localData["HeaderState"] ? localData["HeaderState"] : JSON.parse(localStorage.getItem("HeaderState"));
+//     return localData["HeaderState"] ? localData["HeaderState"] : JSON.parse(sessionStorage.getItem("HeaderState"));
 //   }
 //  this.setHeaderState = function(headerState) {
 // 	 localData["HeaderState"] = headerState;
-// 	 localStorage.setItem("HeaderState", JSON.stringify(headerState));
+// 	 sessionStorage.setItem("HeaderState", JSON.stringify(headerState));
 // 	 EventEmitter.emit('headerStateChanged');
 //  }
 //  this.setHeaderOptions = function(showCampaign,showClient,showDateRange){
-// 	 var headerState = JSON.parse(localStorage.getItem('HeaderState'))
+// 	 var headerState = JSON.parse(sessionStorage.getItem('HeaderState'))
 // 	 if(headerState == null)
 // 		 return null;
 // 	 headerState.showClient=showClient;
@@ -82,7 +82,7 @@ function DataManager() {
 // 	 EventEmitter.emit('RefreshHeader',headerState);
 //  }
 //  this.disableHeaderOptions = function(disableCampaign,disableClient,showDateRange){
-// 	 var headerState = JSON.parse(localStorage.getItem('HeaderState'))
+// 	 var headerState = JSON.parse(sessionStorage.getItem('HeaderState'))
 // 	 if(headerState == null)
 // 		 return null;
 // 	 headerState.disableCampaign=disableCampaign;
@@ -91,12 +91,12 @@ function DataManager() {
 // 	 EventEmitter.emit('RefreshHeader',headerState);
 //  }
   this.getToken = function() {
-    //return localData["token"] ? localData["token"] : JSON.parse(localStorage.getItem("token"));
-      return localStorage.getItem("token") ?  JSON.parse(localStorage.getItem("token")):null;
+    //return localData["token"] ? localData["token"] : JSON.parse(sessionStorage.getItem("token"));
+      return sessionStorage.getItem("token") ?  JSON.parse(sessionStorage.getItem("token")):null;
   }
   this.setToken = function(token) {
     localData["token"] = token;
-    localStorage.setItem("token", JSON.stringify(token));
+    sessionStorage.setItem("token", JSON.stringify(token));
   }
 
   this.isInRole = function(userRole){
@@ -110,17 +110,17 @@ function DataManager() {
   	return false;
   }
   this.getUserInfo = function() {
-    return localData["userInfo"] ? localData["userInfo"] : JSON.parse(localStorage.getItem("userInfo"));
+    return localData["userInfo"] ? localData["userInfo"] : JSON.parse(sessionStorage.getItem("userInfo"));
   }
 
   this.setUserInfo = function(userInfo) {
     localData["userInfo"] = userInfo;
-    localStorage.setItem("userInfo", JSON.stringify(userInfo));
+    sessionStorage.setItem("userInfo", JSON.stringify(userInfo));
   }
   // set the Date
   this.setDateRange = function(startDate, endDate) {
 		// var headerState = localData["HeaderState"];
-		var headerState =  JSON.parse(localStorage.getItem("HeaderState"));
+		var headerState =  JSON.parse(sessionStorage.getItem("HeaderState"));
 		if(headerState == null)
 		  return null;
 		headerState.start = startDate;
@@ -131,7 +131,7 @@ function DataManager() {
 
   this.addHeaderToParams = function(parameters) {
    	// var headerState = localData["HeaderState"];
-		var headerState = JSON.parse(localStorage.getItem('HeaderState'))
+		var headerState = JSON.parse(sessionStorage.getItem('HeaderState'))
 		if(headerState == null)
 		  return null;
 		if(headerState.showClient&&headerState.clientId==null)
@@ -146,7 +146,7 @@ function DataManager() {
 
   this.getHeaderDateParams = function(parameters) {
     // var headerState = localData["HeaderState"];
-    var headerState = JSON.parse(localStorage.getItem('HeaderState'))
+    var headerState = JSON.parse(sessionStorage.getItem('HeaderState'))
     if(headerState == null)
       return null;
     if(headerState.showClient&&headerState.clientId==null)
