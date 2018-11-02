@@ -73,7 +73,7 @@ class CoursePage extends React.Component {
           <div className={classes.container}>
             <GridContainer>
               <GridItem xs={12} sm={12} md={6}>
-                <h1 className={classes.title}>Courses</h1>
+                <h1 className={classes.title}>Our Courses</h1>
               
                 <br />
             
