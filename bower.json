@@ -1,10 +1,10 @@
 {
-  "name": "material-kit-react",
-  "homepage": "https://github.com/creativetimofficial/material-kit-react",
+  "name": "e-learning",
+  "homepage": "",
   "authors": [
-    "creative-tim"
+    "Charan"
   ],
-  "description": "A Badass Material-UI Kit based on Material Design",
+  "description": "",
   "main": "dist/index.js",
   "keywords": [
     "material",
@@ -13,7 +13,7 @@
     "google",
     "twitter"
   ],
-  "license": "Creative TIM License",
+  "license": "MIT License",
   "ignore": [
     "**/.*",
     "node_modules",

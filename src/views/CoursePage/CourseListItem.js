@@ -45,6 +45,7 @@ import Collapsible from 'react-collapsible';
 import { ListGroup, ListGroupItem } from 'reactstrap';
 import dataManager from"../helpers/datamanager"
 import history from '../../index';
+import ReactPlayer from 'react-player'
 const dashboardRoutes = [];
 function Transition(props) {
   return <Slide direction="down" {...props} />;
@@ -188,11 +189,20 @@ class CourseListItem extends React.Component {
                       id="classic-modal-slide-description"
                       className={classes.modalBody}
                     >
-                    <Player
-                         playsInline
-                         poster="/assets/poster.png"
-                         src={this.props.videoUrl}
-                       /> 
+                    {
+
+                      // <Player
+                        //      playsInline
+                        //      poster="/assets/poster.png"
+                        //      src={this.props.videoUrl}
+                        //    /> 
+                      }
+                    <ReactPlayer 
+                    url={this.props.videoUrl}
+                    playing
+                    controls
+                    // Other ReactPlayer props will work here
+                    />
                     </DialogContent>
                     <DialogActions className={classes.modalFooter}>
                      
