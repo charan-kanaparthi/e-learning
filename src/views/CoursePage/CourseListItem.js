@@ -199,8 +199,10 @@ class CourseListItem extends React.Component {
                       }
                     <ReactPlayer 
                     url={this.props.videoUrl}
-                    playing
+                    
                     controls
+                    width='100%'
+                    height='360px'
                     // Other ReactPlayer props will work here
                     />
                     </DialogContent>

@@ -11,7 +11,7 @@
 							"preview": "preview",
 							"summary": "07:23",
 							"isDemo": true,
-							"videoUrl": "https://www.youtube.com/watch?v=S-T2-ir6TPA&list=PL9ooVrP1hQOGR57Y4g1LFhn1JXVgn1lkX&index=1"
+							"videoUrl": "https://www.youtube.com/watch?v=Cgm3r-G0cMQ"
 						}
 
 					]
@@ -25,20 +25,20 @@
 							"preview": "preview",
 							"summary": "08:25",
 							"isDemo": true,
-							"videoUrl": "https://www.youtube.com/watch?v=8eoi2BKaSRE&index=2&list=PL9ooVrP1hQOGR57Y4g1LFhn1JXVgn1lkX"
+							"videoUrl": "https://www.youtube.com/watch?v=X2xQnb-bR8A&t=2s"
 						},
 						{
 							"title": "Histogram Calculation",
 							"preview": "preview",
 							"summary": "11:25",
 							"isDemo": true,
-							"videoUrl": "https://www.youtube.com/watch?v=qOraDpY3Ta0&list=PL9ooVrP1hQOGR57Y4g1LFhn1JXVgn1lkX&index=3"
+							"videoUrl": "https://www.youtube.com/watch?v=ahBMf6F47D8&list=PLAwxTw4SYaPk41og7PER4HBpGciPw6n3x&index=14"
 						}
 
 					]
 				},
 				{
-					"title": "Basic-Techniques",
+					"title": "Basic-Technique",
 					"noLec": "3-lectures ",
 					"summary": "30:00",
 					"data": [{
@@ -46,21 +46,21 @@
 							"preview": "preview",
 							"summary": "11:23",
 							"isDemo": false,
-							"videoUrl": "https://www.youtube.com/watch?v=js6C2mLXEDw&list=PL9ooVrP1hQOGR57Y4g1LFhn1JXVgn1lkX&index=5"
+							"videoUrl": "https://www.youtube.com/watch?v=l_Tzjxfa_5g&index=15&list=PLAwxTw4SYaPk41og7PER4HBpGciPw6n3x"
 						},
 						{
 							"title": "Using Numphy Techniques",
 							"preview": "preview",
 							"summary": "09:25",
 							"isDemo": false,
-							"videoUrl": "https://www.youtube.com/watch?v=-EP37nr8RkQ&index=6&list=PL9ooVrP1hQOGR57Y4g1LFhn1JXVgn1lkX"
+							"videoUrl": "https://www.youtube.com/watch?v=8ay7tX26YxE&index=16&list=PLAwxTw4SYaPk41og7PER4HBpGciPw6n3x"
 						},
 						{
 							"title": "Summation of Elements",
 							"preview": "preview",
 							"summary": "10:25",
 							"isDemo": false,
-							"videoUrl": "https://www.youtube.com/watch?v=Up6KLx3m2ww&index=10&list=PL9ooVrP1hQOGR57Y4g1LFhn1JXVgn1lkX"
+							"videoUrl": "https://www.youtube.com/watch?v=hMxOuWJaVDA&index=17&list=PLAwxTw4SYaPk41og7PER4HBpGciPw6n3x"
 						}
 					]
 				}

@@ -69,7 +69,7 @@ class CoursePage extends React.Component {
           }}
           {...rest}
         />
-        <Parallax filter  style={{height:"30vh"}}>
+        <Parallax filter  style={{height:"37vh"}}>
           <div className={classes.container}>
             <GridContainer>
               <GridItem xs={12} sm={12} md={6}>
