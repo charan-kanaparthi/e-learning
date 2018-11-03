@@ -4,7 +4,7 @@
 
 1. Git
 1. Node: any 8.x version starting with 8.4.0 or greater
-1. install reactjs
+1. Reactjs
 
 ### Installation
 
